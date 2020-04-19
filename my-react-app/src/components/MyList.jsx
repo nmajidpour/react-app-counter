@@ -5,7 +5,7 @@ class MyList extends Component {
   render() {
     return (
       <div className="container">
-        <h6>My Favourites!</h6>
+        <h6>My Favourite list!</h6>
       </div>
     );
   }

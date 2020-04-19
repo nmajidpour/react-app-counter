@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
+import "././components.css";
 
+const itemcard = { textAlign: "center", width: "200px", marginTop: "20px" };
 class Item extends Component {
   state = {
     count: this.props.value,
@@ -10,11 +12,7 @@ class Item extends Component {
   render() {
     return (
       <div className="container">
-        <Card
-          bg="light"
-          text="dark"
-          style={{ textAlign: "center", width: "200px", marginTop: "20px" }}
-        >
+        <Card bg="light" text="dark" style={itemcard}>
           <Card.Body>
             <Card.Title>{this.state.name}</Card.Title>
             <Card.Text>
