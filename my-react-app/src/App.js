@@ -7,6 +7,9 @@ import Nav from "react-bootstrap/Nav";
 import MyList from "./components/mylist";
 import Cart from "./components/cart";
 import Items from "./components/items";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import FavouriteIcon from "@material-ui/icons/FavoriteBorder";
+import ListIcon from "@material-ui/icons/ViewList";
 import "./App.css";
 
 function App() {
@@ -19,15 +22,15 @@ function App() {
           </Navbar.Brand>
           <Nav>
             <Nav.Link as={NavLink} to="/items">
-              Items
+              <ListIcon /> Items
             </Nav.Link>
           </Nav>
           <Nav className="ml-auto">
             <Nav.Link as={NavLink} to="/mylist">
-              Lists
+              <FavouriteIcon /> Lists
             </Nav.Link>
             <Nav.Link as={NavLink} to="/cart">
-              Cart
+              <ShoppingCartIcon /> Cart
             </Nav.Link>
           </Nav>
         </Navbar>

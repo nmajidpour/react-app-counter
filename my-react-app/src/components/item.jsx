@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
-import "././components.css";
+import "./components.css";
+import AddIcon from "@material-ui/icons/AddCircle";
+import RemoveIcon from "@material-ui/icons/RemoveCircle";
+import FavouriteIcon from "@material-ui/icons/FavoriteBorder";
 
 const itemcard = { textAlign: "center", width: "200px", marginTop: "20px" };
 class Item extends Component {
@@ -13,21 +16,26 @@ class Item extends Component {
     return (
       <div className="container">
         <Card bg="light" text="dark" style={itemcard}>
+          <span style={{ textAlign: "right"}}>
+            <button style={{border:"none"}}>
+              <FavouriteIcon />
+            </button>
+          </span>
           <Card.Body>
             <Card.Title>{this.state.name}</Card.Title>
             <Card.Text>
               <button
                 onClick={this.handleIncrement}
-                className="btn btn-success btn-sm"
+                style={{ color: "green", border: "none" }}
               >
-                +
+                <AddIcon />
               </button>
               {this.state.count}
               <button
                 onClick={this.handleDecrement}
-                className="btn btn-danger btn-sm"
+                style={{ color: "red", border: "none" }}
               >
-                -
+                <RemoveIcon />
               </button>
             </Card.Text>
           </Card.Body>
