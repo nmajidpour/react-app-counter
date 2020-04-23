@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" >
           <Navbar.Brand as={NavLink} to="/">
             My React App
           </Navbar.Brand>
