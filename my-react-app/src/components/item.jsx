@@ -27,7 +27,10 @@ class Item extends Component {
                 <AddIcon />
               </button>
               {this.props.item.count}
-              <button style={{ border: "none" }}>
+              <button
+                onClick={() => this.props.onDecrement(this.props.item)}
+                style={{ border: "none" }}
+              >
                 <RemoveIcon />
               </button>
             </Card.Text>

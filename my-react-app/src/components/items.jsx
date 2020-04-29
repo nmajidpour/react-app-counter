@@ -17,7 +17,17 @@ class Items extends Component {
     const items = [...this.state.items];
     const index = items.indexOf(counter);
     items[index] = { ...counter };
-    items[index].value++;
+    items[index].count++;
+    this.setState({ items });
+  };
+
+  handleDecrement = (counter) => {
+    const items = [...this.state.items];
+    const index = items.indexOf(counter);
+    items[index] = { ...counter };
+    if (items[index].count > 0) {
+      items[index].count--;
+    }
     this.setState({ items });
   };
 
@@ -30,6 +40,7 @@ class Items extends Component {
             value={item.count}
             name={item.name}
             onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
             item={item}
           />
         ))}
