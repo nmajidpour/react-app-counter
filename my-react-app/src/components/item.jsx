@@ -8,11 +8,6 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 const itemcard = { textAlign: "center", width: "200px", marginTop: "20px" };
 class Item extends Component {
-  state = {
-    count: this.props.value,
-    name: this.props.name,
-  };
-
   render() {
     return (
       <div className="container">
@@ -23,13 +18,16 @@ class Item extends Component {
             </button>
           </span>
           <Card.Body>
-            <Card.Title>{this.state.name}</Card.Title>
+            <Card.Title>{this.props.item.name}</Card.Title>
             <Card.Text>
-              <button onClick={this.handleIncrement} style={{ border: "none" }}>
+              <button
+                onClick={() => this.props.onIncrement(this.props.item)}
+                style={{ border: "none" }}
+              >
                 <AddIcon />
               </button>
-              {this.state.count}
-              <button onClick={this.handleDecrement} style={{ border: "none" }}>
+              {this.props.item.count}
+              <button style={{ border: "none" }}>
                 <RemoveIcon />
               </button>
             </Card.Text>
@@ -41,14 +39,6 @@ class Item extends Component {
       </div>
     );
   }
-
-  handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-
-  handleDecrement = () => {
-    this.setState({ count: this.state.count - 1 });
-  };
 }
 
 export default Item;

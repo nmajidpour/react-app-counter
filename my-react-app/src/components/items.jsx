@@ -12,20 +12,27 @@ class Items extends Component {
       { id: 5, name: "Item5", count: 0 },
     ],
   };
+
+  handleIncrement = (counter) => {
+    const items = [...this.state.items];
+    const index = items.indexOf(counter);
+    items[index] = { ...counter };
+    items[index].value++;
+    this.setState({ items });
+  };
+
   render() {
     return (
       <div className="components">
-        <table>
-          <tbody>
-            <tr>
-              {this.state.items.map((item) => (
-                <td>
-                  <Item key={item.id} value={item.count} name={item.name} />
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
+        {this.state.items.map((item) => (
+          <Item
+            key={item.id}
+            value={item.count}
+            name={item.name}
+            onIncrement={this.handleIncrement}
+            item={item}
+          />
+        ))}
       </div>
     );
   }
